@@ -11,13 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-<<<<<<< HEAD
-=======
 
 import com.example.demo.models.enums.PackageStatus;
 
 import lombok.Data;
->>>>>>> working-Endpoints
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -53,9 +50,6 @@ public class Shipments {
 	@Basic
 	@Temporal(TemporalType.DATE)
 	private Date created_at;
-<<<<<<< HEAD
-	
-=======
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
@@ -124,5 +118,4 @@ public class Shipments {
 	public void setPackageStatus(PackageStatus packageStatus) {
 		this.packageStatus = packageStatus;
 	}
->>>>>>> working-Endpoints
 }
