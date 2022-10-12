@@ -5,16 +5,12 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,18 +29,16 @@ public class Shipments {
 	@Column(nullable = false)
 	private String receiverName;
 
-	
 	@Column(nullable = false)
 	private int weightKg;
 
-	
 	@Column(nullable = false)
 	private String boxColor;
 
-	
-	@Column(nullable = false)
+	//@ManyToOne(fetch = FetchType.LAZY)
+	//@JoinColumn(name = "country_name", nullable = false)
+	@Column
 	private String destinationCountry;
-	
 	
 	@Column(nullable = false)
 	private double price;
@@ -53,5 +47,4 @@ public class Shipments {
 	@Temporal(TemporalType.DATE)
 	private Date created_at;
 	
-
 }

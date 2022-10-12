@@ -1,22 +1,11 @@
 package com.example.demo.controller;
 
 import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.models.Shipments;
 import com.example.demo.models.Users;
-import com.example.demo.repository.ShipmentRepository;
 import com.example.demo.repository.UserRepository;
 
 @RestController
@@ -25,24 +14,24 @@ public class UsersController {
 	
 	@Autowired
 	private UserRepository userRepository;
-	private ShipmentRepository shipmentRepository;
+	
 	
 	@GetMapping("users")
 	public List<Users> getAllUsers() {
 		return this.userRepository.findAll();
 	}
 	
-	@GetMapping("shipments")
-	public List<Shipments> getAllShipments() {
-		return this.shipmentRepository.findAll();
+	/*
+	 * @GetMapping("shipments") public List<Shipments> getAllShipments() { return
+	 * this.shipmentRepository.findAll(); }
+	 * 
+	 * @GetMapping("country") public List<Country> getAllCountries() { return
+	 * this.countryRepository.findAll(); }
+	 */
+	
 	}
 	
 	
-	
-	}
-	
-	
-}
 
 	
 	

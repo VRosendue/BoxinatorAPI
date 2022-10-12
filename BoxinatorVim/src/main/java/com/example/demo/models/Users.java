@@ -1,20 +1,15 @@
 package com.example.demo.models;
 
 import java.util.Date;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -49,10 +44,10 @@ public class Users {
 	private String userCountry;
 
 	@Column
-	private int userZipCode;
+	private String userZipCode; //has to be String for UK zipcodes (example: BA8) 
 
 	@Column
-	private int phoneNumber;
+	private String phoneNumber; //has to be String if we want to keep landlines (example +45 +44 in UK and Denmark)
 	
 	
 	@Basic
