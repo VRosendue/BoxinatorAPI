@@ -11,16 +11,18 @@ import com.example.demo.models.Shipments;
 import com.example.demo.models.Users;
 import com.example.demo.repository.ShipmentRepository;
 import com.example.demo.repository.UserRepository;
+import static com.example.demo.controller.ControllerHelper.BASE_URI_V1;
+
 
 
 @RestController
-@RequestMapping(path = "/api/v1/")
+@RequestMapping(path = BASE_URI_V1 + "Shipments")
 public class ShipmentController {
 		
 		@Autowired
 		private ShipmentRepository shipmentRepository;
 		
-		@GetMapping("shipments")
+		@GetMapping()
 		public List<Shipments> getAllShipments() {
 			return this.shipmentRepository.findAll();
 		}

@@ -59,4 +59,113 @@ public class Users {
 	@Temporal(TemporalType.DATE)
 	private Date created_at;
 
+
+	public boolean findByEmail() {
+		if (getEmail()==this.email) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+	public Long getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+
+	public String getUserCountry() {
+		return userCountry;
+	}
+
+
+	public void setUserCountry(String userCountry) {
+		this.userCountry = userCountry;
+	}
+
+
+	public int getUserZipCode() {
+		return userZipCode;
+	}
+
+
+	public void setUserZipCode(int userZipCode) {
+		this.userZipCode = userZipCode;
+	}
+
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+	public Date getCreated_at() {
+		return created_at;
+	}
+
+
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
+	
 }
