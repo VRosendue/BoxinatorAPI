@@ -13,20 +13,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.Shipments;
-<<<<<<< HEAD
 import com.example.demo.repository.ShipmentRepository;
-=======
+
 import com.example.demo.services.ShipmentService;
 
 import static com.example.demo.controller.ControllerHelper.BASE_URI_V1;
 
->>>>>>> working-Endpoints
 
 
 @RestController
 @RequestMapping(path = BASE_URI_V1 + "Shipments")
 public class ShipmentController {
-<<<<<<< HEAD
+
 
 	@Autowired
 	private ShipmentRepository shipmentRepository;
@@ -34,7 +32,6 @@ public class ShipmentController {
 	@GetMapping("shipments")
 	public List<Shipments> getAllShipments() {
 		return this.shipmentRepository.findAll();
-=======
 		
 
 	@Autowired
@@ -63,7 +60,6 @@ public class ShipmentController {
 	public ResponseEntity<Shipments>updateShipment(@PathVariable(value="id")Long id, @Validated @RequestBody Shipments newShipment){
 		return shipmentService.updateShipment(newShipment, id);
 	}
->>>>>>> working-Endpoints
-	}
+	
 
 }
