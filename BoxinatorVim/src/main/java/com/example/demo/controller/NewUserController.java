@@ -14,26 +14,4 @@ import com.example.demo.services.UserService;
 @RequestMapping(path = "/test")
 public class NewUserController {
 
-	
-	private UserService userService;
-	
-	@Autowired
-	public void findAllUsers(UserService userService) {
-		this.userService = userService;
-	}
-
-	/*
-	 * @RequestMapping("/") public String index() { return "start";
-	 }*/
-
-	@GetMapping("/newUser")
-	public ResponseEntity<Users> findAll() {
-		return new ResponseEntity<Users>(HttpStatus.OK);
-	}
-
-	@GetMapping("/newAllUsers")
-	public ResponseEntity<Set<Users>> getAllUsers() {
-		return userService.getAllUsers();
-	}
-
 }
