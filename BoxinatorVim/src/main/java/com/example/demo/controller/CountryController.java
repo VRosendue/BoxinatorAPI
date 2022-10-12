@@ -20,7 +20,7 @@ import java.util.List;;
 
 
 
-@RequestMapping(path= BASE_URI_V1 + "countries")
+@RequestMapping(path= BASE_URI_V1 + "Countries")
 @RestController
 public class CountryController {
 

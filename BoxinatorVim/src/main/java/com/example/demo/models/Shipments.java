@@ -30,7 +30,7 @@ public class Shipments {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long boxId;
 
 	@Column(nullable = false)
 	private String receiverName;
@@ -49,7 +49,7 @@ public class Shipments {
 	
 	
 	@Column(nullable = false)
-	private double price;
+	private Long shipmentPrice;
 	
 	@Basic
 	@Temporal(TemporalType.DATE)
@@ -59,12 +59,12 @@ public class Shipments {
 	@Column(nullable = false)
 	private PackageStatus packageStatus;
 
-	public int getId() {
-		return id;
+	public Long getBoxId() {
+		return boxId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setBoxId(Long boxId) {
+		this.boxId = boxId;
 	}
 
 	public String getReceiverName() {
@@ -99,12 +99,12 @@ public class Shipments {
 		this.destinationCountry = destinationCountry;
 	}
 
-	public double getPrice() {
-		return price;
+	public Long getShipmentPrice() {
+		return shipmentPrice;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setShipmentPrice(Long shipmentPrice) {
+		this.shipmentPrice = shipmentPrice;
 	}
 
 	public Date getCreated_at() {
@@ -122,7 +122,4 @@ public class Shipments {
 	public void setPackageStatus(PackageStatus packageStatus) {
 		this.packageStatus = packageStatus;
 	}
-	
-	
-
 }
