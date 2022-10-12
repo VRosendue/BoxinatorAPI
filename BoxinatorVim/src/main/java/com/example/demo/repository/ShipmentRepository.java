@@ -7,6 +7,6 @@ import com.example.demo.models.Shipments;
 import com.example.demo.models.Users;
 
 @Repository
-public interface ShipmentRepository extends JpaRepository<Shipments, Integer> {
+public interface ShipmentRepository extends JpaRepository<Shipments, Long> {
 
 }

@@ -8,7 +8,5 @@ import com.example.demo.models.Users;
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
 
-	
-	
-	
+	boolean findByEmail(String email);
 }
