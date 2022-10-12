@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.example.demo.models;
 
 import javax.persistence.Column;
@@ -106,4 +105,3 @@ public class Country {
 		this.countryCode = countryCode;
 	}
 }
->>>>>>> working-Endpoints
