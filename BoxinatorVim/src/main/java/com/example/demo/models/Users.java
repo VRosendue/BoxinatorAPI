@@ -134,22 +134,22 @@ public class Users {
 	}
 
 
-	public int getUserZipCode() {
+	public String getUserZipCode() {
 		return userZipCode;
 	}
 
 
-	public void setUserZipCode(int userZipCode) {
+	public void setUserZipCode(String userZipCode) {
 		this.userZipCode = userZipCode;
 	}
 
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -162,5 +162,4 @@ public class Users {
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
-	
 }

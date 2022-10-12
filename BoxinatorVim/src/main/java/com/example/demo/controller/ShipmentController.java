@@ -27,14 +27,6 @@ public class ShipmentController {
 
 
 	@Autowired
-	private ShipmentRepository shipmentRepository;
-
-	@GetMapping("shipments")
-	public List<Shipments> getAllShipments() {
-		return this.shipmentRepository.findAll();
-		
-
-	@Autowired
 	private ShipmentService shipmentService;
 
 	@GetMapping

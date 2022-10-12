@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-package com.example.demo.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import com.example.demo.models.Country;
-
-
-@Repository
-public interface CountryRepository extends JpaRepository<Country, Integer> {
-
-}
-=======
 package com.example.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -23,4 +9,4 @@ import com.example.demo.models.Country;
 public interface CountryRepository extends JpaRepository<Country, Long>{
 
 }
->>>>>>> working-Endpoints
+
