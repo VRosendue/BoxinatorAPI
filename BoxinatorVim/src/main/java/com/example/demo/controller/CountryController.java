@@ -18,8 +18,6 @@ import static com.example.demo.controller.ControllerHelper.BASE_URI_V1;
 
 import java.util.List;;
 
-
-
 @RequestMapping(path= BASE_URI_V1 + "Countries")
 @RestController
 public class CountryController {
