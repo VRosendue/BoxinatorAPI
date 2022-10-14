@@ -44,6 +44,7 @@ public class CountryController {
 	public ResponseEntity<Country> deleteCountry(@PathVariable(value="id")Long id){
 		return countryService.deleteCountry(id);
 	}
+	
 	@PutMapping("/{id}")
 	public ResponseEntity<Country>updateCountry(@PathVariable(value="id")Long id, @Validated @RequestBody Country newCountry){
 		return countryService.updateCountry(newCountry, id);

@@ -29,6 +29,12 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:2.7.4'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.4'
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-resource-server
+	implementation 'org.springframework.security:spring-security-oauth2-resource-server:5.7.3'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
