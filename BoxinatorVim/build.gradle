@@ -35,6 +35,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.4'
 	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-resource-server
 	implementation 'org.springframework.security:spring-security-oauth2-resource-server:5.7.3'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+	implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.4'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'

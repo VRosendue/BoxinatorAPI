@@ -1,10 +1,15 @@
 package com.example.demo.models;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -18,7 +23,7 @@ public class Country {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long countryId;
+	private Long id;
 
 	@Column(nullable = false)
 	private String countryName;
@@ -29,16 +34,19 @@ public class Country {
 	@Column(nullable = false)
 	private int countryCode;
 
+    @OneToMany(mappedBy = "destinationCountry", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Set<Shipments> shipments;
+	
 	public Country() {
 
 	}
 
 	public Long getCountryId() {
-		return countryId;
+		return id;
 	}
 
 	public void setCountryId(Long countryId) {
-		this.countryId = countryId;
+		this.id = countryId;
 	}
 
 	public String getCountryName() {

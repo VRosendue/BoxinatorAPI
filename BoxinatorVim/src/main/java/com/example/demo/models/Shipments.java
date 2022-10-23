@@ -3,18 +3,23 @@ package com.example.demo.models;
 import java.util.Date;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.example.demo.models.enums.PackageStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.Getter;
@@ -30,7 +35,7 @@ public class Shipments {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long boxId;
+	private Long id;
 
 	@Column(nullable = false)
 	private String receiverName;
@@ -41,10 +46,9 @@ public class Shipments {
 	@Column(nullable = false)
 	private String boxColor;
 
-	//@ManyToOne(fetch = FetchType.LAZY)
-	//@JoinColumn(name = "country_name", nullable = false)
-	@Column
-	private String destinationCountry;
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "country_id", referencedColumnName = "id")
+	private Country destinationCountry;
 	
 	@Column(nullable = false)
 	private Long shipmentPrice;
@@ -56,13 +60,27 @@ public class Shipments {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private PackageStatus packageStatus;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "shipment_id", referencedColumnName = "id")
+	private Users user;
+	
+	@JsonIgnore
+	public Users getUser() {
+		return user;
+	}
+
+	@JsonIgnore
+	public void setUser(Users user) {
+		this.user = user;
+	}
 
 	public Long getBoxId() {
-		return boxId;
+		return id;
 	}
 
 	public void setBoxId(Long boxId) {
-		this.boxId = boxId;
+		this.id = boxId;
 	}
 
 	public String getReceiverName() {
@@ -89,11 +107,11 @@ public class Shipments {
 		this.boxColor = boxColor;
 	}
 
-	public String getDestinationCountry() {
+	public Country getDestinationCountry() {
 		return destinationCountry;
 	}
 
-	public void setDestinationCountry(String destinationCountry) {
+	public void setDestinationCountry(Country destinationCountry) {
 		this.destinationCountry = destinationCountry;
 	}
 
