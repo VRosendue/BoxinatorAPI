@@ -44,10 +44,6 @@ public class ShipmentController {
 		return shipmentService.createShipment(newShipment);
 	}
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Shipments> deleteShipment(@PathVariable(value="id")Long id){
-		return shipmentService.deleteShipment(id);
-	}
 	@PutMapping("/{id}")
 	public ResponseEntity<Shipments>updateShipment(@PathVariable(value="id")Long id, @Validated @RequestBody Shipments newShipment){
 		return shipmentService.updateShipment(newShipment, id);

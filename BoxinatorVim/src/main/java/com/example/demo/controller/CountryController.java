@@ -47,11 +47,6 @@ public class CountryController {
 		return countryService.createCountry(newCountry);
 	}
 
-	@DeleteMapping("/{id}")
-	@PreAuthorize("hasRole(ADMIN)")
-	public ResponseEntity<Country> deleteCountry(@PathVariable(value="id")Long id){
-		return countryService.deleteCountry(id);
-	}
 	
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole(ADMIN)")

@@ -28,24 +28,12 @@ public class UsersController {
 	@Autowired
 	UserService userService;
 
-	/*
-	 * @GetMapping("AllUsers2") public List<User> getAllUsers2(){ return
-	 * (List<User>) this.userRepo.findAll(); }
-	 */
 
 	@GetMapping("/{userId}")
 	public ResponseEntity<Users> getUserById(@PathVariable long userId) {
 		return userService.getUserById(userId);
 	}
-	
-	/*
-	 * @GetMapping("shipments") public List<Shipments> getAllShipments() { return
-	 * this.shipmentRepository.findAll(); }
-	 * 
-	 * @GetMapping("country") public List<Country> getAllCountries() { return
-	 * this.countryRepository.findAll(); }
-	 */
-	
+		
 	@GetMapping()
 	public ResponseEntity<List<Users>> getAllUsers() {
 		return userService.getAllUsers();
@@ -56,10 +44,6 @@ public class UsersController {
 		return userService.createUser(newUser);
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Users> deleteUser(@PathVariable(value="id")Long id){
-		return userService.deleteUser(id);
-	}
 	@PutMapping("/{id}")
 	public ResponseEntity<Users>updateUser(@PathVariable(value="id")Long id, @Validated @RequestBody Users newUser){
 		return userService.updateUser(newUser, id);
