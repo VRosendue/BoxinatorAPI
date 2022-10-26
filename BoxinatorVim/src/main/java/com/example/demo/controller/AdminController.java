@@ -47,8 +47,4 @@ public class AdminController {
 	public ResponseEntity<Users> deleteUser(@PathVariable(value="id")Long id){
 		return userService.deleteUser(id);
 	}
-	
-	
-	
-
 }

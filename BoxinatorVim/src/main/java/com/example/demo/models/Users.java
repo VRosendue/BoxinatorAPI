@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.example.demo.models.enums.AccountRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -58,6 +59,9 @@ public class Users {
 
 	@Column
 	private String phoneNumber; //has to be String if we want to keep landlines (example +45 +44 in UK and Denmark)
+	
+	@Column
+	private AccountRole accountRole;
 	
 	
 	@Basic
@@ -184,4 +188,14 @@ public class Users {
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
+
+	public AccountRole getAccountRole() {
+		return accountRole;
+	}
+
+	public void setAccountRole(AccountRole accountRole) {
+		this.accountRole = accountRole;
+	}
+	
+	
 }
