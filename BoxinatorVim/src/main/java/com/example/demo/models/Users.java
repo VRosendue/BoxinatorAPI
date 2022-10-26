@@ -146,12 +146,12 @@ public class Users {
 	}
 
 
-	public String getUserCountry() {
+	public Country getUserCountry() {
 		return userCountry;
 	}
 
 
-	public void setUserCountry(String userCountry) {
+	public void setUserCountry(Country userCountry) {
 		this.userCountry = userCountry;
 	}
 
