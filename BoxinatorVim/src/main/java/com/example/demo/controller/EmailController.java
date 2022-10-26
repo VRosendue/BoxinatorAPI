@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.models.EmailModels;
 import com.example.demo.services.EmailSenderService;
-import com.example.demo.utils.EmailMessage;
 
 import static com.example.demo.controller.ControllerHelper.BASE_URI_V1;
 
@@ -19,9 +19,8 @@ public class EmailController {
 	private EmailSenderService emailService;
 
 	@PostMapping("/Email")
-	public ResponseEntity<String> sendEmail(@RequestBody EmailMessage emailMessage) {
-		this.emailService.sendEmail(emailMessage.getTo(), emailMessage.getSubject(), emailMessage.getMessage());
+	public ResponseEntity<String> sendEmail(@RequestBody EmailModels emailMessage) {
+		this.emailService.sendEmail(emailMessage);
 		return ResponseEntity.ok("Email Sent");
 	}
-
 }

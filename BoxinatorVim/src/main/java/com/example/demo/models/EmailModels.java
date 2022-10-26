@@ -1,12 +1,12 @@
-package com.example.demo.utils;
+package com.example.demo.models;
 
-public class EmailMessage {
+public class EmailModels {
 
 	private String to;
 	private String subject;
 	private String message;
 	
-	public EmailMessage(String to, String subject, String message) {
+	public EmailModels(String to, String subject, String message) {
 		super();
 		this.to = to;
 		this.subject = subject;
@@ -30,6 +30,7 @@ public class EmailMessage {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
 	
 	
 	

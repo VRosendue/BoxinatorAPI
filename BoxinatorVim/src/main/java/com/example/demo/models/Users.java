@@ -44,11 +44,11 @@ public class Users {
 	@Column(nullable = false, unique = true)
 	private String email;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String password;
 
 	@Column
-	private String dateOfBirth;
+	private Date dateOfBirth;
 
 	@Column
 	private String userCountry;
@@ -136,12 +136,12 @@ public class Users {
 	}
 
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
