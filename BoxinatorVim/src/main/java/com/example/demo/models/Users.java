@@ -51,7 +51,7 @@ public class Users {
 	private Date dateOfBirth;
 
 	@Column
-	private String userCountry;
+	private Country userCountry;
 
 	@Column
 	private String userZipCode; //has to be String for UK zipcodes (example: BA8) 
